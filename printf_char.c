@@ -2,6 +2,8 @@
 
 /**
  *print_char - return a character
+*@va_list : arguments
+ *return : a character
  */
 
 char *_print_char(va_list arguments)
@@ -11,6 +13,8 @@ char *_print_char(va_list arguments)
 
 /**
  *_string - return a string
+*@va_list : arguments
+ *return : a string
  */
 
 char *_string(va_list arguments)
@@ -20,6 +24,8 @@ char *_string(va_list arguments)
 
 /**
  *_digit - return a digit
+*@va_list : arguments
+ *return: a character
  */
 char *_digit(va_list arguments)
 {
@@ -27,12 +33,5 @@ char *_digit(va_list arguments)
 }
 
 
-/**
- *_integer - return a integer
- */
 
-char *_integer(va_list arguments)
-{
-  return(va_arg(arguments, char *));
-}
 
