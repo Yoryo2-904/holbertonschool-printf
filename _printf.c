@@ -1,69 +1,57 @@
 #include "printf_header.h"
 
 /**
+ * _printf - recives a string and print the string with the
+ * desire modifications (depend of the arguments the user put in
+ * the variadic list): '%s' to print a string, '%c' to print 
+ * a character, '%d' to print a digit and '%i' to print an
+ * integer
+ * @format: the string to be modify
  *
+ * Return: the length of the string
  */
 
 int _printf(const char *format, ...)
 {
 	int i = 0, j = 0, k = 0;
 	char *arrayBuffer = '\0', *arrayBuff_len = '\0';
-	int format_len = _strlen(format), argument_len = 0;
+	int format_len = 0, argument_len = 0;
 	char_function_struct_t pointer_strct[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'d', print_digit},
-		{'i', print_i},
+		{'d', print_digitinteger},
+		{'i', print_digitinteger},
 		{'\0', NULL}
 	};
 
 	va_list arguments;
+	
+	if (format == NULL)
+		return (0);
 
 	va_start(arguments, format);
 
-	arrayBuffer = (char *) malloc(sizeof(char) * format_len);
-
-	if (arrayBuffer == NULL)
-		return (2);
-
-	for (i = 0; i < format_len; i++)
-	{
-		arrayBuffer[i] = format[i];
-	}
+	format_len = _strlen(format);
 
 	for (i = 0; arrayBuffer[i]; i++)
 	{
-		for (j = 0; pointer[j].Char; j++)
+		if (arrayBuffer[i] == '%')
 		{
-			if (arrayBuffer[i] == '%')
+			arrayBuffer[*arrayBuff_len] = format[i];
+		}
+
+		for (j = 0; pointer[j].character; j++)
+		{
+			if (format[i] && format[i] == pointer_strct[j].character)
 			{
-				if (arrayBuffer[i] == pointer_strct[j].Char)
-				{
-					if (arrayBuffer[i + 1] == TRUE)
-					{
-						pointer_strct[j].function(arguments);
-
-						argument_len = _strlen(arguments);
-
-						arrayArguments = (char *) malloc(sizeof(char) * argument_len);
-
-						for (k = 0; k < argument_len; k++)
-						{
-							 arrayArguments[k] = arguments[k];
-						}
-						for (k = 0; k < argument_len; k++)
-						}
-							arrayBuffer[i + k] = arrayArguments[k];
-						}
-						arrayBuff_len = _strlen(arrayBuffer) - 1;
-					}	break;
-				}
+				pointer_strct[j].function(arguments, arrayBuffer, arrayBuff_len);
+				break;
 			}
 		}
 	}
-	write(1, arrayBuffer, arrayBuff_len);
-
 	va_end(arguments);
 
-	return (0);
+	write(1, arrayBuffer, arrayBuff_len);
+
+	return (arrayBuff_len);
 }
