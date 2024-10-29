@@ -1,0 +1,37 @@
+.TH _PRINTF 3 "October 2024" "1.0" "User Commands"
+.SH NAME
+_printf \- custom formatted output function
+.SH SYNOPSIS
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The \fB_printf\fR function receives a format string and prints it
+with desired modifications based on the variadic arguments.
+Supported format specifiers are:
+.TP
+.B %s
+Prints a string.
+.TP
+.B %c
+Prints a character.
+.TP
+.B %d
+Prints a digit.
+.TP
+.B %i
+Prints an integer.
+.PP
+The function processes the format string character by character,
+replacing format specifiers with their corresponding values
+from the variadic arguments provided.
+.SH RETURN VALUE
+Returns the length of the formatted output string.
+If the format string is \fBNULL\fR, the function returns 0.
+.SH EXAMPLES
+To print a string and an integer:
+.nf
+_printf("Hello %s, your score is %d\n", "Alice", 95);
+.fi
+.SH SEE ALSO
+printf(3), write(2)
+.SH AUTHOR
+Luis zipa y Jorge Leal <luiscarloszipacogaria@gmail.com>
