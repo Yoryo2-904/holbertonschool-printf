@@ -8,12 +8,12 @@
  */
 int _strlen(const char *s)  /* Usar const para indicar que no se modifica*/
 {
-  int i = 0;
+int i = 0;
 
-  if (s == NULL)
-    return 0;
+if (s == NULL)
+return (0);
 
-  while (s[i])
-    i++;
-  return i;
+while (s[i])
+i++;
+return (i);
 }

@@ -12,11 +12,11 @@
 
 void print_char(va_list arguments, char *arrayBuffer, int *arrayBuff_len)
 {
-  char c = (char)va_arg(arguments, int);  /* Extraer el caracter como un int*/
-  if (*arrayBuff_len < BUFFER_SIZE - 1)  /* Asegurarse de que no exceda el tamano del buffer*/
-    {
-      arrayBuffer[*arrayBuff_len] = c;  /* Almacenar el caracter*/
-      (*arrayBuff_len)++;
-    }
-  arrayBuffer[*arrayBuff_len] = '\0';  /* Terminar la cadena*/
+char c = (char)va_arg(arguments, int);  /* Extraer el caracter como un int*/
+if (*arrayBuff_len < BUFFER_SIZE - 1)  /* no exceder el tamano del buffer*/
+{
+arrayBuffer[*arrayBuff_len] = c;  /* Almacenar el caracter*/
+(*arrayBuff_len)++;
+}
+arrayBuffer[*arrayBuff_len] = '\0';  /* Terminar la cadena*/
 }
