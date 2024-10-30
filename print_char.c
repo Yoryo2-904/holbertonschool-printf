@@ -1,4 +1,4 @@
-#include "printf_header.h"
+#include "main.h"
 
 /**
  * print_char - Extracts a character from the argument list and

@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "printf_header.h"
-#include <stdarg.h>
+#include "main.h"
 /**
  * print_digitinteger - Extracts an integer from the argument list
  *                      and stores it as a string in the provided buffer.

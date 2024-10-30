@@ -1,4 +1,4 @@
-#include "printf_header.h"
+#include "main.h"
 
 /**
  * _strlen - Counts the length of a string.

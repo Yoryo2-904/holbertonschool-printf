@@ -1,4 +1,4 @@
-#include "printf_header.h"
+#include "main.h"
 #include <unistd.h>  /* Para la funcinnn write*/
 #define BUFFER_SIZE 1024  /* Define un tamano de buffer adecuado*/
 /**
